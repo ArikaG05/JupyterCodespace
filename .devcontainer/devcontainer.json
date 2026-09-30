@@ -6,6 +6,11 @@
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {}
   },
+  "secrets": {
+    "LITELLM_API_KEY": {
+      "description": "Your API key for the class LLM gateway (used by opencode)."
+    }
+  },
   "customizations": {
     "vscode": {
       "settings": {

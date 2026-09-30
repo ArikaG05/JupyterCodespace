@@ -13,3 +13,8 @@ RUN curl -fsSL https://pixi.sh/install.sh | bash \
     && echo 'eval "$(uv generate-shell-completion bash)"' >> /etc/bash.bashrc \
     && echo 'eval "$(uv generate-shell-completion zsh)"'  >> /etc/zsh/zshrc \
     && chsh -s /usr/bin/zsh vscode
+
+# Point opencode at the class LiteLLM gateway. The key comes from the
+# LITELLM_API_KEY env var (set it as a Codespaces secret).
+COPY opencode.json /etc/opencode/opencode.json
+ENV OPENCODE_CONFIG=/etc/opencode/opencode.json
